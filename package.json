@@ -1,0 +1,25 @@
+{
+  "name": "authenticate-test",
+  "version": "1.0.0",
+  "description": "backend rest api server for authenticate backend test",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "express",
+    "postgres"
+  ],
+  "author": "Himanshu Joshi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
