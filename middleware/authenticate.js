@@ -12,9 +12,17 @@ export const authenticate = async (req, _, next) => {
 
   try {
     claims = jwt.verify(token, process.env.JWT_SECRET)
-    req.body.userNumber = claims.number
+    req.claims = {
+      userNumber: claims.number,
+      userId: claims.id
+    }
+
+    if (!claims.number || !claims.id) {
+      throw new Error("Invalid token")
+    }
   } catch (error) {
-    next(BadRequestError("Invalid Token"))
+    console.log(error)
+    return next(BadRequestError("Invalid Token"))
   }
 
   // check if token is in the database

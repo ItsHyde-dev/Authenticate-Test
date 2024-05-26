@@ -17,7 +17,6 @@ export const Contacts = sequelize.define(
     number: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     created_by: {
       type: DataTypes.INTEGER,
@@ -34,12 +33,11 @@ export const Contacts = sequelize.define(
     },
   },
   {
-    hooks: {
-      afterCreate: (instance, _) => {
-        if (instance.created_by == null) {
-          return instance.update({ created_by: instance.id });
-        }
-      },
-    },
+    indexes: [
+      {
+        unique: true,
+        fields: ["number", "created_by"]
+      }
+    ]
   }
 );

@@ -22,7 +22,7 @@ export async function login(req, res, next) {
       throw BadRequestError("Incorrect credentials");
     }
 
-    const token = jwt.sign({ number }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ number, id: user.id }, process.env.JWT_SECRET, {
       expiresIn: "24h",
     });
 
@@ -46,8 +46,7 @@ export async function signup(req, res, next) {
     const { name, number, email, password } = req.body;
     const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
-    // should throw any errors it faces
-    await userQueries.createUser({
+    let userCreationResponse = await userQueries.createUser({
       name,
       number,
       email,
@@ -57,7 +56,7 @@ export async function signup(req, res, next) {
     await contactQueries.createContact({
       name,
       number,
-      createdBy: null,
+      createdBy: userCreationResponse.id,
       spam: false
     });
 

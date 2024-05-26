@@ -9,9 +9,9 @@ import contactsRouter from "./components/contacts/contacts.route.js";
 
 
 // this will initialize the database connection for us
-import { testDbConnection } from './database/postgres/postgres.connection.js'
+import './database/postgres/postgres.connection.js'
 import { syncModels } from "./database/postgres/syncModels.js";
-testDbConnection()
+import searchRouter from "./components/search/search.route.js";
 syncModels()
 
 const serverConfig = getServerConfig();
@@ -20,9 +20,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// start routing
+// routing
 app.use("/auth", authRouter);
 app.use("/contacts", contactsRouter);
+app.use("/search", searchRouter);
 
 app.use(errorHandler);
 
