@@ -21,7 +21,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"number\": \"+1 (218) 724-4713\",\n    \"skip\": 0,\n    \"limit\": 10\n}",
+							"raw": "{\n    \"number\": \"7364836483\",\n    \"skip\": 0,\n    \"limit\": 10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -29,11 +29,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/search/number",
+							"raw": "https://authenticate-test.onrender.com/search/number",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"search",
 								"number"
@@ -62,11 +64,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/search/details",
+							"raw": "https://authenticate-test.onrender.com/search/details",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"search",
 								"details"
@@ -95,11 +99,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/search/name",
+							"raw": "https://authenticate-test.onrender.com/search/name",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"search",
 								"name"
@@ -128,11 +134,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/auth/signup",
+							"raw": "https://authenticate-test.onrender.com/auth/signup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"signup"
@@ -172,11 +180,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/auth/login",
+							"raw": "https://authenticate-test.onrender.com/auth/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auth",
 								"login"
@@ -210,11 +220,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/contacts/mark-spam",
+							"raw": "https://authenticate-test.onrender.com/contacts/mark-spam",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"authenticate-test",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"contacts",
 								"mark-spam"
